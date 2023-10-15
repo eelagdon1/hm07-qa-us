@@ -2,18 +2,17 @@
 const config = require('../config');
 
 test('Should return 200 status code', async () => {
-	let actualStatusCode;
-	try {
-		const response = await fetch(`${config.API_URL}/api/v1/kits/1`);
-		actualStatusCode = response.status;
-	} catch (error) {
-		console.error(error);
-	}
-	expect(actualStatusCode).toBe(200);
+    let actualStatusCode;
+    try {
+        const response = await fetch(`${config.API_URL}/api/v1/kits/1`);
+        actualStatusCode = response.status;
+    } catch (error) {
+        console.error(error);
+    }
+    expect(actualStatusCode).toBe(200);
 });
 
-
-test('Body should contain Orange Juice', async () => {
+test('Response body should contain "For picnic"', async () => { // Updated test name
     let actualResponseBody;
     try {
         const response = await fetch(`${config.API_URL}/api/v1/kits/1`);
@@ -21,6 +20,6 @@ test('Body should contain Orange Juice', async () => {
     } catch (error) {
         console.error(error);
     }
-    
-    expect(actualResponseBody.name).toBe("For picnic");
+
+    expect(actualResponseBody.name).toBe("For picnic"); // Updated expected property name
 });

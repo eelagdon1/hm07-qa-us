@@ -24,7 +24,7 @@ test('Status code should be 201', async () => {
 });
 
 
-test('Response body should contain "Prepare a dish"', async () => {
+test('Response body should contain "null"', async () => {
     let actualResponseBody;
     try {
         const response = await fetch(`${config.API_URL}/api/v1/kits/`, {
